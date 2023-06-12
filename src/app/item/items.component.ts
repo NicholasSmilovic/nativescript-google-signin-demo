@@ -31,6 +31,13 @@ export class ItemsComponent implements OnInit {
       console.error('🔥 Firebase initialization error: ', error)
     });
 
+    GoogleSignin.configure({})
+    .then(() => {
+      console.warn('GoogleSignin configured');
+    }).catch(error => {
+      console.error('GoogleSignin configuration error: ', error);
+    });
+
   }
   loginWithGoogle() {
     GoogleSignin.signIn()
